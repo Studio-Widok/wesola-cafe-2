@@ -1,0 +1,11 @@
+@use "variables" as *;
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $navWidth;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+}

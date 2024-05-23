@@ -3,7 +3,7 @@
 ## todo
 - [x] wordpress
 - [x] fonts (Monument Grotesk, Covered By Your Grace)
-- [ ] top
+- [x] top
 - [ ] navigation
 - [ ] speech baloons
 - [ ] intro

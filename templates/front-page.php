@@ -1,5 +1,7 @@
 <?php // template name: front page
 get_header();
+get_part('nav');
+get_part('front-top');
 ?>
 
 <div class="rsep"></div>

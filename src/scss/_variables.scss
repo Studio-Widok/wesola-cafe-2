@@ -7,12 +7,14 @@ $spacing: 3rem;
 // $wrapperSpacing: 3rem;
 $fontRatio: math.div(100rem, $contentWidth);
 
+$navWidth: 25rem;
+
 $resLarge: 1280px;
 $resTablet: 900px;
 $resPhone: 450px;
 
-$colorContent: #eee;
-$colorBg: #222;
+$colorContent: #000;
+$colorBg: #fff;
 
 @font-face {
   font-family: "Monument Grotesk";

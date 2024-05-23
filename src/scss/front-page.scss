@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+#top {
+  position: relative;
+  height: calc(var(--vh, 1vh) * 100);
+
+  #top-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - $navWidth);
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

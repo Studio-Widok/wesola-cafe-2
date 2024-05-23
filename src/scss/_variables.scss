@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 
 $contentWidth: 60rem;
 // $contentWidthWide: 120rem;
@@ -14,14 +14,26 @@ $resPhone: 450px;
 $colorContent: #eee;
 $colorBg: #222;
 
-// @font-face {
-//   font-family: "Helvetica Neue";
-//   src: url("../media/HelveticaNeueLTProRoman.otf");
-//   font-weight: normal;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Monument Grotesk";
+  src: url("../media/MonumentGrotesk-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Covered By Your Grace";
+  src: url("../media/CoveredByYourGrace-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @mixin fontDefault() {
-  font-family: sans-serif;
+  font-family: "Monument Grotesk", sans-serif;
+}
+
+@mixin fontAccent() {
+  font-family: "Covered By Your Grace", sans-serif;
 }

@@ -6,7 +6,7 @@
 - [x] top
 - [ ] navigation
 - [x] speech balloons
-- [ ] intro
+- [x] intro
 - [ ] eating
 - [ ] contact
 - [ ] instagram gallery

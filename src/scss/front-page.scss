@@ -15,6 +15,49 @@
   }
 }
 
-#intro {
-  font-size: max(min(2rem, 2vw * $fontRatio), 1.25rem);
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+#eating {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+
+  .eating-section {
+    position: relative;
+    width: calc(33.3333% - 2rem);
+
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      transform: translate(30%, -30%);
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        animation: spin 2s infinite;
+      }
+    }
+  }
+
+  .eating-img {
+    width: calc(33.3333% - 2rem);
+  }
+
+  .eating-text {
+    width: calc(66.6667% - 1rem);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

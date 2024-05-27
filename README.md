@@ -7,7 +7,7 @@
 - [ ] navigation
 - [x] speech balloons
 - [x] intro
-- [ ] eating
+- [x] eating
 - [ ] contact
 - [ ] instagram gallery
 - [ ] default page

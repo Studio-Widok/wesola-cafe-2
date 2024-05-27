@@ -6,12 +6,19 @@
 }
 
 .text {
-  padding: 0 3rem;
   font-size: max(min(1.5rem, 1.5vw * $fontRatio), 1.1rem);
 
-  @media (max-width: $resTablet) {
-    padding: 0;
+  &--padded {
+    padding: 0 3rem;
+
+    @media (max-width: $resTablet) {
+      padding: 0;
+    }
   }
+}
+
+.large {
+  font-size: max(min(2rem, 2vw * $fontRatio), 1.25rem);
 }
 
 .bubble-wrap {
@@ -77,19 +84,22 @@
   display: flex;
   gap: 3rem;
 
-  .image-wrap {
-    position: relative;
+  .image-column {
     width: 50%;
-    padding-bottom: 66.7%;
+  }
+}
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+.image-wrap {
+  position: relative;
+  padding-bottom: 133.3333%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }

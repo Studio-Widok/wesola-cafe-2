@@ -8,7 +8,7 @@
 - [x] speech balloons
 - [x] intro
 - [x] eating
-- [ ] contact
+- [x] contact
 - [ ] instagram gallery
 - [ ] default page
 - [ ] responsiveness

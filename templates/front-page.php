@@ -1,7 +1,8 @@
 <?php // template name: front page
 
-$intro  = get_field('intro');
-$eating = get_field('eating');
+$intro   = get_field('intro');
+$eating  = get_field('eating');
+$contact = get_field('contact');
 
 get_header();
 get_part('nav');
@@ -64,6 +65,32 @@ get_part('front-top');
         <div class="text"><?= $eating['text'] ?></div>
         <div class="rmik"></div>
         <div class="large uppercase"><u><?= $eating['menu_button'] ?></u></div>
+      </div>
+    </div>
+
+    <div class="flex bubble-sketch">
+      <?php get_part('bubble', ['text' => $contact['bubble']]) ?>
+      <img src="<?= get_template_directory_uri() ?>/media/img-3.png" alt="">
+    </div>
+
+    <?php get_part('image-group', ['images' => $contact['images']]) ?>
+
+    <div class="rsep"></div>
+
+    <div class="flex flex-justify-end">
+      <?php get_part('bubble', ['text' => $contact['bubble_2']]) ?>
+    </div>
+
+    <div class="rmik"></div>
+
+    <div id="contact">
+      <img src="<?= $contact['map']['url'] ?>" alt="" id="contact-map">
+
+      <div id="contact-text">
+        <div class="text"><?= $contact['text'] ?></div>
+        <div class="rmin"></div>
+        <div class="large uppercase text"><u><?= $contact['book_button'] ?></u>
+        </div>
       </div>
     </div>
 

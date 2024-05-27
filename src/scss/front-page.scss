@@ -14,3 +14,7 @@
     object-position: center;
   }
 }
+
+#intro {
+  font-size: max(min(2rem, 2vw * $fontRatio), 1.25rem);
+}

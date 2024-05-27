@@ -5,12 +5,12 @@
 - [x] fonts (Monument Grotesk, Covered By Your Grace)
 - [x] top
 - [ ] navigation
-- [ ] speech baloons
+- [x] speech balloons
 - [ ] intro
 - [ ] eating
 - [ ] contact
 - [ ] instagram gallery
 - [ ] default page
-- [ ] responsivenss
+- [ ] responsiveness
   - [ ] navigation
   - [ ] content

@@ -1,4 +1,5 @@
 <?php
+$eating  = get_field('eating', get_option('page_on_front'));
 $contact = get_field('contact', get_option('page_on_front'));
 ?>
 
@@ -9,9 +10,10 @@ $contact = get_field('contact', get_option('page_on_front'));
         alt="Wesoła Cafe">
     </div>
     <div id="nav-links">
-      <div class="nav-link">menu<img class="nav-link__icon"
+      <a href="<?= $eating['menu_download']['url'] ?>" target="_blank"
+        class="nav-link">menu<img class="nav-link__icon"
           src="<?= get_template_directory_uri() ?>/media/icon-arrow.svg"
-          alt="download"></div>
+          alt="download"></a>
       <div class="nav-link">nasza piekarnia<img class="nav-link__icon"
           src="<?= get_template_directory_uri() ?>/media/icon-girl.svg"
           alt="download"></div>
@@ -21,11 +23,13 @@ $contact = get_field('contact', get_option('page_on_front'));
     </div>
     <div id="nav-info" class="text-center">
       <div class="social-row">
-        <a href="<?= $contact['instagram_link'] ?>" class="social-icon">
+        <a href="<?= $contact['instagram_link'] ?>" target="_blank"
+          rel="noopener noreferrer" class="social-icon">
           <img src="<?= get_template_directory_uri() ?>/media/instagram.svg"
             alt="instagram">
         </a>
-        <a href="<?= $contact['facebook_link'] ?>" class="social-icon">
+        <a href="<?= $contact['facebook_link'] ?>" target="_blank"
+          rel="noopener noreferrer" class="social-icon">
           <img src="<?= get_template_directory_uri() ?>/media/facebook.svg"
             alt="instagram">
         </a>

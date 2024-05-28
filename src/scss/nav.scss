@@ -84,9 +84,20 @@ nav {
     gap: 1rem;
     margin-bottom: 3rem;
 
-    .social-icon img {
-      width: 2rem;
-      height: 2rem;
+    .social-icon {
+      background-color: $colorContent;
+      padding: 0.2rem;
+      border-bottom: 1px solid transparent;
+      transition: 0.3s;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &:hover {
+        border-bottom: 1px solid #fff;
+      }
     }
   }
 }

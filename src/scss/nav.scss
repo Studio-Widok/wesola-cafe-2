@@ -8,4 +8,85 @@ nav {
   height: 100%;
   background-color: #000;
   color: #fff;
+  z-index: 22;
+}
+
+#nav-wrap {
+  padding: 3rem;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#nav-logo {
+  padding: 3rem 3rem 0 3rem;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+#nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .nav-link {
+    position: relative;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+
+    &--button {
+      border: 1px solid $colorBg;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: $colorBg;
+        color: $colorContent;
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(0, -50%);
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+}
+
+#nav-info {
+  .social-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    .social-icon img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 }

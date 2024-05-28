@@ -4,7 +4,7 @@
 - [x] wordpress
 - [x] fonts (Monument Grotesk, Covered By Your Grace)
 - [x] top
-- [ ] navigation
+- [x] navigation
 - [x] speech balloons
 - [x] intro
 - [x] eating

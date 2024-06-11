@@ -2,15 +2,23 @@
 
 ## todo
 - [x] wordpress
-- [x] fonts (Monument Grotesk, Covered By Your Grace)
+- [x] fonts
 - [x] top
 - [x] navigation
 - [x] speech balloons
 - [x] intro
 - [x] eating
 - [x] contact
+- [x] new fonts
+- [x] new image layout
 - [ ] instagram gallery
+- [ ] footer
+- [ ] flexible content
+- [ ] page - career
+- [ ] page - work
 - [ ] default page
 - [ ] responsiveness
   - [ ] navigation
-  - [ ] content
+  - [ ] front page
+  - [ ] flexible content
+- [ ] metadata

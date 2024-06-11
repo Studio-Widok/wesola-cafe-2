@@ -12,7 +12,7 @@
 - [x] new fonts
 - [x] new image layout
 - [ ] instagram gallery
-- [ ] footer
+- [x] footer
 - [ ] flexible content
 - [ ] page - career
 - [ ] page - work

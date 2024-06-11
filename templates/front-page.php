@@ -97,7 +97,5 @@ get_part('front-top');
 </div>
 
 <div class="rsep"></div>
-<div class="rsep"></div>
-<div class="rsep"></div>
 
 <?php get_footer(); ?>

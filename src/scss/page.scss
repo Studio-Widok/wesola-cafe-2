@@ -66,3 +66,17 @@
     object-position: center;
   }
 }
+
+footer {
+  background-color: #000;
+  color: #fff;
+
+  #footer-img {
+    width: 75%;
+  }
+
+  .copyright {
+    text-align: right;
+    margin-top: -2.5rem;
+  }
+}

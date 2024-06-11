@@ -14,17 +14,18 @@ $contact = get_field('contact', get_option('page_on_front'));
         class="nav-link">menu<img class="nav-link__icon"
           src="<?= get_template_directory_uri() ?>/media/icon-arrow.svg"
           alt="download"></a>
-      <a href="<?= get_field('bakery_link') ?>" target="_blank"
-        rel="noopener noreferrer" class="nav-link">nasza piekarnia<img
-          class="nav-link__icon"
+      <a href="<?= get_field('bakery_link', get_option('page_on_front')) ?>"
+        target="_blank" rel="noopener noreferrer" class="nav-link">nasza
+        piekarnia<img class="nav-link__icon"
           src="<?= get_template_directory_uri() ?>/media/icon-girl.svg"
           alt=""></a>
       <a href="<?= get_the_permalink(getPageId('catering')) ?>"
         class="nav-link"><?= get_the_title(getPageId('catering')) ?></a>
       <a href="<?= get_the_permalink(getPageId('praca')) ?>"
         class="nav-link"><?= get_the_title(getPageId('praca')) ?></a>
-      <a href="<?= get_field('booking_link') ?>" target="_blank"
-        rel="noopener noreferrer" class="nav-link nav-link--button">rezerwuj</a>
+      <a href="<?= get_field('booking_link', get_option('page_on_front')) ?>"
+        target="_blank" rel="noopener noreferrer"
+        class="nav-link nav-link--button">rezerwuj</a>
     </div>
     <div id="nav-info" class="text-center">
       <div class="social-row">

@@ -13,6 +13,14 @@
     object-fit: cover;
     object-position: center;
   }
+
+  @media (max-width: $resLarge) {
+    height: 50vw;
+
+    #top-bg {
+      width: 100%;
+    }
+  }
 }
 
 @keyframes spin {

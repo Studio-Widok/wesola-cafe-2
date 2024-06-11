@@ -3,6 +3,10 @@
 .content-wrap {
   position: relative;
   margin-left: $navWidth;
+
+  @media (max-width: $resLarge) {
+    margin: 0;
+  }
 }
 
 .text {
@@ -15,7 +19,11 @@
 
 .accent {
   @include fontAccent();
-  font-size: max(min(5rem, 5vw * $fontRatio), 2rem);
+  font-size: max(min(5rem, 5vw * $fontRatio), 3rem);
+
+  @media (max-width: $resPhone) {
+    font-size: 8vw;
+  }
 }
 
 .bubble-sketch {
@@ -28,6 +36,10 @@
 
   img {
     width: calc(33.3333% - 3rem);
+  }
+
+  @media (max-width: $resPhone) {
+    gap: 1rem;
   }
 }
 

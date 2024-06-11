@@ -1,6 +1,8 @@
 <?php
 global $customPageStates;
 $customPageStates = [
+  'catering' => 'Catering',
+  'praca'    => 'Praca',
 ];
 
 /**

@@ -12,7 +12,7 @@ if (is_front_page()) {
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
-  <!-- <link rel="icon" type="image/png" href="<?= $url ?>/media/favicon.png" /> -->
+  <link rel="icon" type="image/png" href="<?= $url ?>/media/favicon.png" />
   <meta property="og:title" content="<?= $ogtitle ?>" />
   <!-- <meta property="og:description" content="<?= $description ?>" /> -->
   <meta property="og:type" content="website" />

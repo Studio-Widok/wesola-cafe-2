@@ -12,7 +12,7 @@ get_part('front-top');
 <div class="rsep"></div>
 <div class="content-wrap">
   <div class="content column">
-    <div class="text text--padded uppercase large" id="intro">
+    <div class="text uppercase large" id="intro">
       <?= $intro['text'] ?>
     </div>
 
@@ -28,7 +28,7 @@ get_part('front-top');
 
     <div class="r"></div>
 
-    <div class="text text--padded"><?= $intro['text_2'] ?></div>
+    <div class="text"><?= $intro['text_2'] ?></div>
 
     <div class="r"></div>
 

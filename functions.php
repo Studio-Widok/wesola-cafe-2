@@ -6,6 +6,7 @@ include __DIR__ . '/include/cleanup.php';
 include __DIR__ . '/include/enqueue.php';
 include __DIR__ . '/include/partials.php';
 include __DIR__ . '/include/helpers.php';
+include __DIR__ . '/include/getPageId.php';
 
 // if (function_exists('acf_add_options_page')) {
 //   acf_add_options_page([

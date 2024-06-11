@@ -32,25 +32,16 @@
   .eating-section {
     position: relative;
     width: calc(33.3333% - 2rem);
-
-    .badge {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40%;
-      transform: translate(30%, -30%);
-
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-        animation: spin 2s infinite;
-      }
-    }
   }
 
   .eating-img {
     width: calc(33.3333% - 2rem);
+
+    img {
+      width: 180%;
+      max-width: none;
+      margin-left: -80%;
+    }
   }
 
   .eating-text {
@@ -59,6 +50,27 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  #eating-bottom-img {
+    display: block;
+    width: 33.3333%;
+    height: auto;
+    margin-left: auto;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: spin 2s infinite;
   }
 }
 

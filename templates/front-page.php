@@ -19,9 +19,10 @@ get_part('front-top');
     <div class="r"></div>
 
     <div class="flex bubble-sketch">
-      <?php get_part('bubble', ['text' => $intro['bubble']]) ?>
-      <img src="<?= get_template_directory_uri() ?>/media/img-1.png" alt="">
+      <div class="accent"><?= $intro['bubble'] ?></div>
+      <img src="<?= get_template_directory_uri() ?>/media/img-1.svg" alt="">
     </div>
+    <div class="r"></div>
 
     <?php get_part('image-group', ['images' => $intro['images']]) ?>
 
@@ -32,7 +33,13 @@ get_part('front-top');
     <div class="r"></div>
 
     <div class="flex flex-justify-end">
-      <?php get_part('bubble', ['text' => $eating['bubble']]) ?>
+      <div class="accent rel">
+        <?= $eating['bubble'] ?>
+        <div class="badge">
+          <img src="<?= get_template_directory_uri() ?>/media/badge-new.svg"
+            alt="new">
+        </div>
+      </div>
     </div>
 
     <div class="r"></div>
@@ -48,38 +55,29 @@ get_part('front-top');
           </div>
           <div class="rmik"></div>
           <div class="large uppercase"><?= $section['name'] ?></div>
-          <?php if ($section['new']) { ?>
-            <div class="badge">
-              <img src="<?= get_template_directory_uri() ?>/media/badge-new.svg"
-                alt="new">
-            </div>
-          <?php } ?>
         </div>
       <?php } ?>
 
-      <div class="eating-img"><img
-          src="<?= get_template_directory_uri() ?>/media/img-2.png" alt="">
+      <div class="eating-img">
+        <img src="<?= get_template_directory_uri() ?>/media/img-2.svg" alt="">
       </div>
 
       <div class="eating-text">
         <div class="text"><?= $eating['text'] ?></div>
-        <div class="rmik"></div>
+        <div class="rmin"></div>
         <div class="large uppercase"><u><?= $eating['menu_button'] ?></u></div>
       </div>
+
+      <img src="<?= get_template_directory_uri() ?>/media/img-3.svg" alt=""
+        id="eating-bottom-img">
     </div>
 
-    <div class="flex bubble-sketch">
-      <?php get_part('bubble', ['text' => $contact['bubble']]) ?>
-      <img src="<?= get_template_directory_uri() ?>/media/img-3.png" alt="">
-    </div>
+    <div class="accent"><?= $contact['bubble'] ?></div>
+    <div class="r"></div>
 
     <?php get_part('image-group', ['images' => $contact['images']]) ?>
 
     <div class="rsep"></div>
-
-    <div class="flex flex-justify-end">
-      <?php get_part('bubble', ['text' => $contact['bubble_2']]) ?>
-    </div>
 
     <div class="rmik"></div>
 
@@ -87,6 +85,7 @@ get_part('front-top');
       <img src="<?= $contact['map']['url'] ?>" alt="" id="contact-map">
 
       <div id="contact-text">
+        <div class="accent"><?= $contact['bubble_2'] ?></div>
         <div class="text"><?= $contact['text'] ?></div>
         <div class="rmin"></div>
         <div class="large uppercase text"><u><?= $contact['book_button'] ?></u>

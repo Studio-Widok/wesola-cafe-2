@@ -5,7 +5,7 @@ $contentWidth: 60rem;
 // $contentWidthText: 45rem;
 $spacing: 3rem;
 // $wrapperSpacing: 3rem;
-$fontRatio: math.div(100rem, $contentWidth);
+$fontRatio: math.div(100rem, $contentWidth + 25rem);
 
 $navWidth: 25rem;
 

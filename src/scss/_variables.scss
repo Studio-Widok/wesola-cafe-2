@@ -25,10 +25,10 @@ $colorBg: #fff;
 }
 
 @font-face {
-  font-family: "Covered By Your Grace";
-  src: url("../media/CoveredByYourGrace-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Gooper";
+  src: url("../media/Gooper7-SuperItalic.woff");
+  font-weight: 900;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -37,5 +37,7 @@ $colorBg: #fff;
 }
 
 @mixin fontAccent() {
-  font-family: "Covered By Your Grace", sans-serif;
+  font-family: "Gooper", sans-serif;
+  font-weight: 900;
+  font-style: italic;
 }

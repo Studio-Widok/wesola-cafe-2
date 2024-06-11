@@ -29,7 +29,6 @@
 .bubble {
   @include fontAccent();
   position: relative;
-  text-transform: uppercase;
   padding: 0.5em 1em 1em 1em;
   font-size: max(min(1.5rem, 1.5vw * $fontRatio), 1.1rem);
 

@@ -46,7 +46,8 @@ nav {
   .nav-link {
     position: relative;
     text-transform: uppercase;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
     letter-spacing: 0.1em;
     border-bottom: 1px solid transparent;
     transition: 0.3s;

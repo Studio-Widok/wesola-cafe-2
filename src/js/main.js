@@ -3,32 +3,27 @@ import $ from 'cash-dom';
 // import smoothscroll from 'smoothscroll-polyfill';
 
 import 'widok';
+import createSlider from "widok-slider";
+
+import './nav';
 
 // smoothscroll.polyfill();
 
-function openNav() {
-  if (isNavOpen) return;
-  $('#burger, nav').addClass('opened');
-  isNavOpen = true;
-}
+$('.image-group-wrap').each((index, DOMElement) => {
+  const wrap = $(DOMElement);
+  const slides = wrap.find('.image-column');
+  if (slides.length <= 2) return;
 
-function closeNav() {
-  if (!isNavOpen) return;
-  $('#burger, nav').removeClass('opened');
-  isNavOpen = false;
-}
-
-let isNavOpen = false;
-
-$('#burger').on('click', event => {
-  if (isNavOpen) closeNav();
-  else openNav();
-});
-
-$('#burger, nav').on('click', event => {
-  event.isFromNav = true;
-});
-
-$(document).on('click', event => {
-  if (isNavOpen && event.isFromNav !== true) closeNav();
+  const id = `image-group-${index}`;
+  wrap.attr({ id });
+  createSlider({
+    wrap: wrap.find('.image-group'),
+    slideSelector: '.image-column',
+    useKeys: true,
+    mouseDrag: true,
+    touchDrag: true,
+    loop: true,
+    arrowPrev: `#${id} .image-group-prev`,
+    arrowNext: `#${id} .image-group-next`,
+  });
 });

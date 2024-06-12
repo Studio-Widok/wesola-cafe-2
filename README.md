@@ -11,6 +11,7 @@
 - [x] contact
 - [x] new fonts
 - [x] new image layout
+- [x] slider
 - [ ] instagram gallery
 - [x] footer
 - [ ] flexible content

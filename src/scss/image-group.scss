@@ -1,0 +1,58 @@
+@use "variables" as *;
+
+.image-group-wrap {
+  position: relative;
+
+  .image-group {
+    display: flex;
+    gap: 3rem;
+
+    .image-column {
+      width: 50%;
+    }
+
+    &--slider {
+      gap: 0rem;
+      .image-column {
+        .image-wrap {
+          width: calc(100% - 3rem);
+        }
+      }
+    }
+  }
+
+  .slider-sizer {
+    width: calc(50% + 1.5rem);
+  }
+
+  .image-group-arrows {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 6rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+
+    @media (max-width: ($navWidth + $contentWidth + 9rem)) {
+      width: 3rem;
+    }
+
+    .image-group-next,
+    .image-group-prev {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .image-group-next:hover {
+      padding-left: 0.5em;
+    }
+
+    .image-group-prev:hover {
+      padding-right: 0.5em;
+    }
+  }
+}

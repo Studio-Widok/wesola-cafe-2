@@ -30,3 +30,15 @@ add_filter('use_block_editor_for_post_type', function ($use_block_editor, $post_
 //   acf_update_setting('google_api_key', $env['GOOGLE_API_KEY']);
 // }
 // add_action('acf/init', 'my_acf_init');
+
+add_action('init', function () {
+  register_post_type('work', [
+    'public'      => true,
+    'label'       => 'Oferty Pracy',
+    'labels'      => [
+      'singular_name' => 'Oferta Pracy',
+    ],
+    'has_archive' => false,
+    'supports'    => ['title'],
+  ]);
+});

@@ -1,0 +1,32 @@
+.page-template-praca {
+  .offer {
+    &__top {
+      display: flex;
+      gap: 3rem;
+    }
+
+    &__img {
+      width: 50%;
+    }
+
+    &__top-info {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__icon {
+      margin: 0 auto;
+    }
+
+    .offer-points {
+      display: flex;
+      gap: 3rem;
+
+      &__column {
+        width: 50%;
+      }
+    }
+  }
+}

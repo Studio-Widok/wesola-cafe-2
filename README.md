@@ -16,7 +16,7 @@
 - [x] footer
 - [ ] flexible content
 - [ ] page - career
-- [ ] page - work
+- [x] page - work
 - [ ] default page
 - [ ] responsiveness
   - [x] navigation

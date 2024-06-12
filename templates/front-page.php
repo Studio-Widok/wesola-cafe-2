@@ -6,7 +6,7 @@ $contact = get_field('contact');
 
 get_header();
 get_part('nav');
-get_part('front-top');
+get_part('top');
 ?>
 
 <div class="rsep"></div>

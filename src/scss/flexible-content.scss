@@ -21,3 +21,33 @@
     }
   }
 }
+
+.logo-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  .logo {
+    width: calc(33.3333% - 2rem);
+
+    .image-wrap {
+      padding-bottom: 45%;
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  a.logo {
+    position: relative;
+    top: 0;
+    transition: 0.3s;
+
+    &:hover {
+      top: -0.5rem;
+    }
+  }
+}

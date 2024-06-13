@@ -14,8 +14,8 @@
 - [x] slider
 - [ ] instagram gallery
 - [x] footer
-- [ ] flexible content
-- [ ] page - career
+- [x] flexible content
+- [x] page - career
 - [x] page - work
 - [ ] default page
 - [ ] responsiveness

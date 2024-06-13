@@ -1,0 +1,23 @@
+.icons-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+
+  .icon {
+    width: calc(33.3333% - 2rem);
+
+    .image-wrap {
+      padding-bottom: 55%;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    &__name {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+}

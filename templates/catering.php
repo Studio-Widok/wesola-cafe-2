@@ -31,6 +31,23 @@ $content = get_field('content');
           <div class="rsep"></div>
           <?php break;
 
+        case 'icons': ?>
+          <div class="icons-wrap">
+            <?php
+            for ($j = 0; $j < count($section['icons']); $j++) {
+              $icon = $section['icons'][$j];
+              ?>
+              <div class="icon">
+                <div class="image-wrap">
+                  <?= widok_img($icon['image'], ['srcset' => true, 'class' => 'icon__image']) ?>
+                </div>
+                <div class="icon__name uppercase large"><?= $icon['text'] ?></div>
+              </div>
+            <?php } ?>
+          </div>
+          <div class="rsep"></div>
+          <?php break;
+
         default: ?>
           <div class="large"><?= $section['acf_fc_layout'] ?></div>
           <pre style="white-space: pre-wrap;"><?php

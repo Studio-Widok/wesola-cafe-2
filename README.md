@@ -17,7 +17,7 @@
 - [x] flexible content
 - [x] page - career
 - [x] page - work
-- [ ] default page
+- [x] default page
 - [ ] responsiveness
   - [x] navigation
   - [ ] front page

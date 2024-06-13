@@ -6,8 +6,14 @@ $contact = get_field('contact', get_option('page_on_front'));
 <nav>
   <div id="nav-wrap">
     <div id="nav-logo">
-      <img src="<?= get_template_directory_uri() ?>/media/logo.svg"
-        alt="Wesoła Cafe">
+      <?php if (!is_front_page()) { ?>
+        <a href="<?= get_home_url() ?>">
+        <?php } ?>
+        <img src="<?= get_template_directory_uri() ?>/media/logo.svg"
+          alt="Wesoła Cafe">
+        <?php if (!is_front_page()) { ?>
+        </a>
+      <?php } ?>
     </div>
     <div id="nav-links">
       <a href="<?= $eating['menu_download']['url'] ?>" target="_blank"

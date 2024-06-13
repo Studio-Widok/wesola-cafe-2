@@ -1,5 +1,8 @@
 <?php
 $bg = get_field('top_bg');
+
+if (empty($bg))
+  return;
 ?>
 
 <div id="top">

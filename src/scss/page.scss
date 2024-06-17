@@ -74,4 +74,14 @@ footer {
     text-align: right;
     margin-top: -2.5rem;
   }
+
+  @media (max-width: $resPhone) {
+    #footer-img {
+      width: 100%;
+    }
+
+    .copyright {
+      margin-top: 2rem;
+    }
+  }
 }

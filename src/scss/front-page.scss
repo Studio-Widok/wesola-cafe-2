@@ -92,6 +92,11 @@
     .eating-text {
       width: 100%;
     }
+
+    #eating-bottom-img {
+      width: 50%;
+      margin: -5% 0 -2.5% auto;
+    }
   }
 }
 
@@ -107,6 +112,10 @@
     width: 100%;
     height: auto;
     animation: spin 2s infinite;
+  }
+
+  @media (max-width: $resPhone) {
+    top: -2rem;
   }
 }
 
@@ -129,5 +138,11 @@
 
   @media (max-width: $resPhone) {
     gap: 1rem;
+    flex-direction: column;
+
+    #contact-map,
+    #contact-text {
+      width: 100%;
+    }
   }
 }

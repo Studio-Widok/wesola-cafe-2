@@ -20,6 +20,7 @@
 - [x] default page
 - [ ] responsiveness
   - [x] navigation
-  - [ ] front page
+  - [x] front page
+  - [ ] page - work
   - [ ] flexible content
 - [ ] metadata

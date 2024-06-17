@@ -23,4 +23,4 @@
   - [x] front page
   - [x] page - work
   - [x] flexible content
-- [ ] metadata
+- [x] metadata

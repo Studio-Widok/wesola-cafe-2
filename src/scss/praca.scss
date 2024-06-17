@@ -1,8 +1,18 @@
+@use "./variables" as *;
+
 .page-template-praca {
   .offer {
     &__top {
       display: flex;
       gap: 3rem;
+
+      @media (max-width: $resTablet) {
+        gap: 2rem;
+      }
+
+      @media (max-width: $resPhone) {
+        gap: 1rem;
+      }
     }
 
     &__img {
@@ -23,6 +33,14 @@
     .offer-points {
       display: flex;
       gap: 3rem;
+
+      @media (max-width: $resTablet) {
+        gap: 2rem;
+      }
+
+      @media (max-width: $resPhone) {
+        gap: 1rem;
+      }
 
       &__column {
         width: 50%;

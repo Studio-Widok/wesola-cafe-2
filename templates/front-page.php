@@ -32,8 +32,8 @@ get_part('top');
 
     <div class="r"></div>
 
-    <div class="flex flex-justify-end">
-      <div class="accent rel">
+    <div class="flex rel">
+      <div class="accent">
         <?= $eating['bubble'] ?>
         <div class="badge">
           <img src="<?= get_template_directory_uri() ?>/media/badge-new.svg"

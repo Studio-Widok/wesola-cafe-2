@@ -66,13 +66,41 @@
     height: auto;
     margin: -10% 0 -5% auto;
   }
+
+  @media (max-width: $resTablet) {
+    gap: 2rem;
+
+    .eating-section,
+    .eating-img {
+      width: calc(33.3333% - 1.3333rem);
+    }
+  }
+
+  @media (max-width: $resPhone) {
+    gap: 1rem;
+    justify-content: center;
+
+    .eating-section {
+      width: 100%;
+      max-width: 16rem;
+    }
+
+    .eating-img {
+      width: 70%;
+    }
+
+    .eating-text {
+      width: 100%;
+    }
+  }
 }
 
 .badge {
   position: absolute;
-  top: 0;
+  top: 2rem;
   right: 0;
   width: 8rem;
+  z-index: 1;
 
   img {
     display: block;
@@ -93,5 +121,13 @@
 
   #contact-text {
     width: calc(50% - 1.5rem);
+  }
+
+  @media (max-width: $resTablet) {
+    gap: 2rem;
+  }
+
+  @media (max-width: $resPhone) {
+    gap: 1rem;
   }
 }

@@ -13,16 +13,41 @@
 
     &--slider {
       gap: 0rem;
+
       .image-column {
         .image-wrap {
           width: calc(100% - 3rem);
         }
       }
     }
+
+    @media (max-width: $resTablet) {
+      gap: 2rem;
+
+      &--slider .image-column .image-wrap {
+        width: calc(100% - 2rem);
+      }
+    }
+
+    @media (max-width: $resPhone) {
+      gap: 1rem;
+
+      &--slider .image-column .image-wrap {
+        width: calc(100% - 1rem);
+      }
+    }
   }
 
   .slider-sizer {
     width: calc(50% + 1.5rem);
+
+    @media (max-width: $resTablet) {
+      width: calc(50% + 1rem);
+    }
+
+    &--slider .image-column .image-wrap {
+      width: calc(50% + 0.5rem);
+    }
   }
 
   .image-group-arrows {
@@ -41,18 +66,31 @@
       width: 3rem;
     }
 
+    @media (max-width: $resTablet) {
+      left: calc(100% - 1.5rem);
+    }
+
     .image-group-next,
     .image-group-prev {
+      position: relative;
+      left: 0;
+      width: 2rem;
+      height: 2rem;
+      background-color: $colorBg;
+      display: flex;
+      justify-content: center;
+      line-height: 0.75em;
+      border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
     }
 
     .image-group-next:hover {
-      padding-left: 0.5em;
+      left: 0.25em;
     }
 
     .image-group-prev:hover {
-      padding-right: 0.5em;
+      left: -0.25em;
     }
   }
 }

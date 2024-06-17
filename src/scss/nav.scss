@@ -26,6 +26,10 @@ nav {
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: $resPhone) {
+    gap: 2rem;
+  }
 }
 
 #nav-logo {

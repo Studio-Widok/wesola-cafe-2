@@ -21,6 +21,10 @@
       width: 100%;
     }
   }
+
+  @media (max-width: $resTablet) {
+    height: min(75vw, calc(var(--vh, 1vh) * 100));
+  }
 }
 
 @keyframes spin {

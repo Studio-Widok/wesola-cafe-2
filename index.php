@@ -1,11 +1,10 @@
 <?php
-
 get_header();
 get_part('nav');
 get_part('top');
 ?>
 
-<div class="rsep"></div>
+<div class="rsep rsep--top"></div>
 
 <div class="content-wrap">
   <div class="content column">

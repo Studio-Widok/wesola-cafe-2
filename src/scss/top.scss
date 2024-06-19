@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+#top {
+  position: relative;
+  height: calc(var(--vh, 1vh) * 100);
+
+  #top-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - $navWidth);
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: $resLarge) {
+    height: 50vw;
+
+    #top-bg {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $resTablet) {
+    height: min(75vw, calc(var(--vh, 1vh) * 100));
+  }
+}
+
+.page-template-catering #top {
+  height: calc(var(--vh, 1vh) * 100 - 13.5rem);
+
+  @media (max-width: $resTablet) {
+    height: min(75vw, calc(var(--vh, 1vh) * 100 - 10rem));
+  }
+}

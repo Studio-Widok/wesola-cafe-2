@@ -1,32 +1,5 @@
 @use "variables" as *;
 
-#top {
-  position: relative;
-  height: calc(var(--vh, 1vh) * 100);
-
-  #top-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: calc(100% - $navWidth);
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  @media (max-width: $resLarge) {
-    height: 50vw;
-
-    #top-bg {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: $resTablet) {
-    height: min(75vw, calc(var(--vh, 1vh) * 100));
-  }
-}
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -129,7 +102,24 @@
   gap: 3rem;
 
   #contact-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     width: calc(50% - 1.5rem);
+
+    .map-link {
+      opacity: 0.5;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   #contact-text {

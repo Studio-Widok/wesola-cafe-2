@@ -65,7 +65,12 @@ get_part('top');
       <div class="eating-text">
         <div class="text"><?= $eating['text'] ?></div>
         <div class="rmin"></div>
-        <div class="large uppercase"><u><?= $eating['menu_button'] ?></u></div>
+        <div class="text large uppercase">
+          <a href="<?= $eating['menu_download'] ?>" target="_blank"
+            rel="noopener noreferrer">
+            <u><?= $eating['menu_button'] ?></u>
+          </a>
+        </div>
       </div>
 
       <img src="<?= get_template_directory_uri() ?>/media/img-3.svg" alt=""
@@ -82,13 +87,26 @@ get_part('top');
     <div class="rmik"></div>
 
     <div id="contact">
-      <img src="<?= $contact['map']['url'] ?>" alt="" id="contact-map">
+      <div id="contact-map">
+        <img src="<?= $contact['map']['url'] ?>" alt="">
+        <?php
+        $mapLink = get_field('google_map_link');
+        if (!empty($mapLink)) {
+          ?>
+          <a href="<?= $mapLink ?>" target="_blank" rel="noopener noreferrer"
+            class="map-link">google map</a>
+        <?php } ?>
+      </div>
 
       <div id="contact-text">
         <div class="accent"><?= $contact['bubble_2'] ?></div>
+        <div class="r"></div>
         <div class="text"><?= $contact['text'] ?></div>
         <div class="rmin"></div>
-        <div class="large uppercase text"><u><?= $contact['book_button'] ?></u>
+        <div class="large uppercase text">
+          <a href="<?= get_field('booking_link') ?>" target="_blank"
+            rel="noopener noreferrer"><u><?= $contact['book_button'] ?></a>
+          </u>
         </div>
       </div>
     </div>

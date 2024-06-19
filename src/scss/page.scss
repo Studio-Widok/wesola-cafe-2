@@ -13,8 +13,17 @@
   font-size: max(min(1.5rem, 1.5vw * $fontRatio), 1.1rem);
 }
 
+.text a,
+.text-link {
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
 .large {
-  font-size: max(min(2rem, 2vw * $fontRatio), 1.25rem);
+  font-size: max(min(1.75rem, 1.75vw * $fontRatio), 1.2rem);
 }
 
 .accent {

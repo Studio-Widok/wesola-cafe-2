@@ -70,6 +70,8 @@ add_action('wp_enqueue_scripts', function () {
   wp_dequeue_style('global-styles');
   wp_dequeue_style('safe-svg-svg-icon-style');
   wp_dequeue_style('classic-theme-styles');
+  wp_deregister_style('sbi_styles');
+  wp_deregister_script('sbi_scripts');
 }, 10);
 
 add_action('after_switch_theme', function () {

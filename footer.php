@@ -1,5 +1,7 @@
 <?php
 $privacyPolicyId = get_option('wp_page_for_privacy_policy');
+
+get_part('instagram');
 ?>
 
 <footer>

@@ -26,7 +26,7 @@
 - [x] new fonts
 - [x] new image layout
 - [x] slider
-- [ ] instagram gallery
+- [x] instagram gallery
 - [x] footer
 - [x] flexible content
 - [x] page - career

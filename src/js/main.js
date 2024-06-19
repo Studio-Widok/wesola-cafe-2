@@ -31,3 +31,9 @@ $('.image-group-wrap').each((index, DOMElement) => {
     },
   });
 });
+
+document.querySelectorAll('.sbi_photo').forEach(DOMElement => {
+  const img = DOMElement.querySelector('img');
+  img.dataset.src = DOMElement.dataset.fullRes;
+  img.classList.add('lazyload');
+});

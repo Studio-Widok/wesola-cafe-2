@@ -5,7 +5,7 @@
 - [x] "book a table" and similar links should be smaller
 - [x] smaller line height in the accent font
 - [x] thinner accent font
-- [ ] galleries are missing counts
+- [x] galleries are missing counts
 - [x] more space between "widzimy się" and the text below
 - [ ] neon blinking on "lepiej pić kawę niż nie"
 - [x] thicker and shorter (text width) underline below nav links

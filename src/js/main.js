@@ -14,6 +14,7 @@ $('.image-group-wrap').each((index, DOMElement) => {
   const slides = wrap.find('.image-column');
   if (slides.length <= 2) return;
 
+  const slideNumberElement = wrap.find('.image-group-current');
   const id = `image-group-${index}`;
   wrap.attr({ id });
   createSlider({
@@ -25,5 +26,8 @@ $('.image-group-wrap').each((index, DOMElement) => {
     loop: true,
     arrowPrev: `#${id} .image-group-prev`,
     arrowNext: `#${id} .image-group-next`,
+    onActivate: slide => {
+      slideNumberElement.text(slide.realId + 1);
+    },
   });
 });

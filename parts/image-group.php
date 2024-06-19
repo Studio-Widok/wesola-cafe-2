@@ -17,6 +17,10 @@ $count = count($images);
   <?php if ($count > 2) { ?>
     <div class="image-group-arrows">
       <div class="image-group-next">-&gt;</div>
+      <div class="image-group-info">
+        <span class="image-group-current"></span> / <span
+          class="image-group-count"><?= $count ?></span>
+      </div>
       <div class="image-group-prev">&lt;-</div>
     </div>
   <?php } ?>

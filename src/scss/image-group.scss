@@ -60,7 +60,6 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-size: 2rem;
 
     @media (max-width: ($navWidth + $contentWidth + 9rem)) {
       width: 3rem;
@@ -76,6 +75,7 @@
       left: 0;
       width: 2rem;
       height: 2rem;
+      font-size: 2rem;
       background-color: $colorBg;
       display: flex;
       justify-content: center;
@@ -83,6 +83,17 @@
       border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
+    }
+
+    .image-group-info {
+      background-color: $colorBg;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 0.75em;
     }
 
     .image-group-next:hover {

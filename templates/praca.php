@@ -7,6 +7,8 @@ $offers = get_posts([
   'numberposts' => -1,
   'post_type'   => 'work',
 ]);
+
+$count = count($offers);
 ?>
 
 <div class="content-wrap">
@@ -22,7 +24,7 @@ $offers = get_posts([
       <div class="rsep"></div>
       <?php
     } else {
-      for ($i = 0; $i < count($offers); $i++) { ?>
+      for ($i = 0; $i < $count; $i++) { ?>
         <?php if ($i !== 0) { ?>
           <hr>
         <?php } ?>

@@ -32,3 +32,12 @@ function custom_page_title($title) {
 
   return get_bloginfo('name');
 }
+
+add_action('acf/save_post', 'my_acf_save_post');
+function my_acf_save_post($post_id) {
+  $eating = get_field('eating', get_option('page_on_front'));
+  $url    = str_replace(home_url() . '/', '', $eating['menu_download']['url']);
+  global $wp_rewrite;
+  $wp_rewrite->add_external_rule('menu\/?', $url);
+  flush_rewrite_rules();
+}

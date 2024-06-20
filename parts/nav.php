@@ -16,15 +16,21 @@ $contact = get_field('contact', get_option('page_on_front'));
       <?php } ?>
     </div>
     <div id="nav-links">
-      <a href="<?= $eating['menu_download']['url'] ?>" target="_blank"
-        class="nav-link">menu<img class="nav-link__icon"
-          src="<?= get_template_directory_uri() ?>/media/icon-arrow.svg"
-          alt="download"></a>
-      <a href="<?= get_field('bakery_link', get_option('page_on_front')) ?>"
-        target="_blank" rel="noopener noreferrer" class="nav-link">nasza
-        piekarnia<img class="nav-link__icon"
-          src="<?= get_template_directory_uri() ?>/media/icon-girl.svg"
-          alt=""></a>
+      <?php if (!empty($eating['menu_download'])) { ?>
+        <a href="<?= $eating['menu_download']['url'] ?>" target="_blank"
+          class="nav-link">menu<img class="nav-link__icon"
+            src="<?= get_template_directory_uri() ?>/media/icon-arrow.svg"
+            alt="download"></a>
+      <?php } ?>
+      <?php
+      $bakeryLink = get_field('bakery_link', get_option('page_on_front'));
+      if (!empty($eating['menu_download'])) { ?>
+        <a href="<?= $bakeryLink ?>" target="_blank" rel="noopener noreferrer"
+          class="nav-link">nasza
+          piekarnia<img class="nav-link__icon"
+            src="<?= get_template_directory_uri() ?>/media/icon-girl.svg"
+            alt=""></a>
+      <?php } ?>
       <a href="<?= get_the_permalink(getPageId('catering')) ?>"
         class="nav-link"><?= get_the_title(getPageId('catering')) ?></a>
       <a href="<?= get_the_permalink(getPageId('praca')) ?>"

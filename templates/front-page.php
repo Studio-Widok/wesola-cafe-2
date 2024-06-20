@@ -64,13 +64,15 @@ get_part('top');
 
       <div class="eating-text">
         <div class="text"><?= $eating['text'] ?></div>
-        <div class="rmin"></div>
-        <div class="text large uppercase">
-          <a href="<?= $eating['menu_download'] ?>" target="_blank"
-            rel="noopener noreferrer">
-            <u><?= $eating['menu_button'] ?></u>
-          </a>
-        </div>
+        <?php if (!empty($eating['menu_download'])) { ?>
+          <div class="rmin"></div>
+          <div class="text large uppercase">
+            <a href="<?= home_url('menu') ?>" target="_blank"
+              rel="noopener noreferrer">
+              <u><?= $eating['menu_button'] ?></u>
+            </a>
+          </div>
+        <?php } ?>
       </div>
 
       <img src="<?= get_template_directory_uri() ?>/media/img-3.svg" alt=""

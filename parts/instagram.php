@@ -1,4 +1,6 @@
 <?php
+return;
+
 $link = get_field('instagram_link', get_option('page_on_front'));
 ?>
 

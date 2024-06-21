@@ -67,8 +67,8 @@ get_part('top');
         <?php if (!empty($eating['menu_download'])) { ?>
           <div class="rmin"></div>
           <div class="text large uppercase">
-            <a href="<?= home_url('menu') ?>" target="_blank"
-              rel="noopener noreferrer">
+            <a href="/menu<?= pll_current_language() === 'pl' ? '' : '-en' ?>"" target="
+              _blank" rel="noopener noreferrer">
               <u><?= $eating['menu_button'] ?></u>
             </a>
           </div>

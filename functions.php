@@ -35,9 +35,18 @@ function custom_page_title($title) {
 
 add_action('acf/save_post', 'my_acf_save_post');
 function my_acf_save_post($post_id) {
+  if (!in_array($post_id, [intval(get_option('page_on_front')), pll_get_post(get_option('page_on_front'), 'en')])) {
+    return;
+  }
+
   $eating = get_field('eating', get_option('page_on_front'));
   $url    = str_replace(home_url() . '/', '', $eating['menu_download']['url']);
+
+  $eatingEn = get_field('eating', pll_get_post(get_option('page_on_front'), 'en'));
+  $urlEn    = str_replace(home_url() . '/', '', $eatingEn['menu_download']['url']);
+
   global $wp_rewrite;
+  $wp_rewrite->add_external_rule('menu-en\/?', $urlEn);
   $wp_rewrite->add_external_rule('menu\/?', $url);
   flush_rewrite_rules();
 }

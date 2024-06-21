@@ -16,12 +16,14 @@ $count = count($images);
   </div>
   <?php if ($count > 2) { ?>
     <div class="image-group-arrows">
+      <div></div>
       <div class="image-group-next">-&gt;</div>
       <div class="image-group-info">
         <span class="image-group-current"></span> / <span
           class="image-group-count"><?= $count ?></span>
       </div>
       <div class="image-group-prev">&lt;-</div>
+      <div></div>
     </div>
   <?php } ?>
 </div>

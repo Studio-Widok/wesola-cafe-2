@@ -24,8 +24,12 @@
     @media (max-width: $resTablet) {
       gap: 2rem;
 
-      &--slider .image-column .image-wrap {
-        width: calc(100% - 2rem);
+      &--slider {
+        margin-bottom: 2.5rem;
+
+        .image-column .image-wrap {
+          width: calc(100% - 2rem);
+        }
       }
     }
 
@@ -66,7 +70,11 @@
     }
 
     @media (max-width: $resTablet) {
-      left: calc(100% - 1.5rem);
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 6rem;
+      flex-direction: row-reverse;
     }
 
     .image-group-next,
@@ -76,11 +84,9 @@
       width: 2rem;
       height: 2rem;
       font-size: 2rem;
-      background-color: $colorBg;
       display: flex;
       justify-content: center;
       line-height: 0.75em;
-      border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
     }

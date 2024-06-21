@@ -91,13 +91,6 @@ get_part('top');
     <div id="contact">
       <div id="contact-map">
         <img src="<?= $contact['map']['url'] ?>" alt="">
-        <?php
-        $mapLink = get_field('google_map_link');
-        if (!empty($mapLink)) {
-          ?>
-          <a href="<?= $mapLink ?>" target="_blank" rel="noopener noreferrer"
-            class="map-link">google map</a>
-        <?php } ?>
       </div>
 
       <div id="contact-text">
@@ -119,3 +112,5 @@ get_part('top');
 <div class="rsep"></div>
 
 <?php get_footer(); ?>
+
+<a href="http://" target="_blank" rel="noopener noreferrer"></a>

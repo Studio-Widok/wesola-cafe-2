@@ -24,7 +24,7 @@ $contact = get_field('contact', get_option('page_on_front'));
       <?php } ?>
       <?php
       $bakeryLink = get_field('bakery_link', get_option('page_on_front'));
-      if (!empty($eating['menu_download'])) { ?>
+      if (!empty($bakeryLink)) { ?>
         <a href="<?= $bakeryLink ?>" target="_blank" rel="noopener noreferrer"
           class="nav-link"><?= pll__('nasza piekarnia') ?><img
             class="nav-link__icon"

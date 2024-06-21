@@ -35,6 +35,14 @@ $contact = get_field('contact', get_option('page_on_front'));
         class="nav-link"><?= get_the_title(getPageId('catering')) ?></a>
       <a href="<?= get_the_permalink(getPageId('praca')) ?>"
         class="nav-link"><?= get_the_title(getPageId('praca')) ?></a>
+
+      <?php
+      $langs = pll_the_languages(['hide_current' => true, 'raw' => true]);
+      foreach ($langs as $slug => $lang) {
+        ?>
+        <a href="<?= $lang['url'] ?>" class="nav-link"><?= $slug ?></a>
+      <?php } ?>
+
       <a href="<?= get_field('booking_link', get_option('page_on_front')) ?>"
         target="_blank" rel="noopener noreferrer"
         class="nav-link nav-link--button"><?= pll__('rezerwuj') ?></a>

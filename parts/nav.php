@@ -17,8 +17,8 @@ $contact = get_field('contact', get_option('page_on_front'));
     </div>
     <div id="nav-links">
       <?php if (!empty($eating['menu_download'])) { ?>
-        <a href="/menu<?= pll_current_language() === 'pl' ? '' : '-en' ?>"
-          target="_blank" class="nav-link">menu<img class="nav-link__icon"
+        <a href="<?= home_url('menu') ?>" class="nav-link">menu<img
+            class="nav-link__icon"
             src="<?= get_template_directory_uri() ?>/media/icon-arrow.svg"
             alt="download"></a>
       <?php } ?>

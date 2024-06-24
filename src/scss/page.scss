@@ -71,6 +71,55 @@
   }
 }
 
+#menu-flex {
+  gap: 3em;
+  align-items: center;
+
+  .menu-download {
+    position: relative;
+    width: 50%;
+
+    .menu-spacer {
+      padding-bottom: 100%;
+    }
+
+    .menu-text {
+      @include fontAccent();
+      font-size: 2rem;
+      position: absolute;
+      inset: 0;
+      padding: 3rem;
+      background-color: $colorContent;
+      color: $colorBg;
+      box-shadow: 0 0 0 2px $colorContent inset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.3s;
+
+      &:hover {
+        color: $colorContent;
+        background-color: $colorBg;
+      }
+    }
+  }
+
+  @media (max-width: $resTablet) {
+    gap: 2rem;
+    flex-direction: column;
+
+    .menu-download {
+      width: 100%;
+      max-width: 23rem;
+    }
+  }
+
+  @media (max-width: $resPhone) {
+    gap: 1rem;
+  }
+}
+
 footer {
   background-color: #000;
   color: #fff;

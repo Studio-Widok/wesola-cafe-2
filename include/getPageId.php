@@ -3,6 +3,7 @@ global $customPageStates;
 $customPageStates = [
   'catering' => 'Catering',
   'praca'    => 'Praca',
+  'menu'     => 'Menu',
 ];
 
 /**

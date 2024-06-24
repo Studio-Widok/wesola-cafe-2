@@ -47,6 +47,6 @@ function my_acf_save_post($post_id) {
 
   global $wp_rewrite;
   $wp_rewrite->add_external_rule('menu-en\/?', $urlEn);
-  $wp_rewrite->add_external_rule('menu\/?', $url);
+  $wp_rewrite->add_external_rule('menu-pl\/?', $url);
   flush_rewrite_rules();
 }

@@ -9,6 +9,10 @@
   }
 }
 
+.rsep--top + .content-wrap {
+  min-height: calc(100vh - 49.2rem);
+}
+
 .text {
   font-size: max(min(1.5rem, 1.5vw * $fontRatio), 1.1rem);
 }

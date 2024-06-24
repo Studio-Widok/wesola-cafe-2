@@ -21,10 +21,20 @@ $contact = get_field('contact', get_option('page_on_front'));
             class="nav-link__icon"
             src="<?= get_template_directory_uri() ?>/media/icon-arrow.svg"
             alt="download"></a>
-      <?php } ?>
-      <?php
+        <?php
+      }
+
       $bakeryLink = get_field('bakery_link', get_option('page_on_front'));
-      if (!empty($bakeryLink)) { ?>
+      if (empty($bakeryLink)) {
+        ?>
+        <div class="nav-link nav-link--disabled">
+          <span><?= pll__('nasza piekarnia') ?></span><img class="nav-link__icon"
+            src="<?= get_template_directory_uri() ?>/media/icon-girl.svg" alt="">
+          <div class="tooltip"><span>coming soon</span></div>
+        </div>
+        <?php
+      } else {
+        ?>
         <a href="<?= $bakeryLink ?>" target="_blank" rel="noopener noreferrer"
           class="nav-link"><?= pll__('nasza piekarnia') ?><img
             class="nav-link__icon"

@@ -14,7 +14,7 @@
 - [x] square burger
 - [x] add a google map link in contact
 - [x] menu download language select
-- [ ] "coming soon" link to Buka
+- [x] "coming soon" link to Buka
 
 ## todo
 - [x] wordpress

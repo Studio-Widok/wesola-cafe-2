@@ -13,6 +13,8 @@
 - [x] catering - top image smaller, to show the heading below
 - [x] square burger
 - [x] add a google map link in contact
+- [x] menu download language select
+- [ ] "coming soon" link to Buka
 
 ## todo
 - [x] wordpress

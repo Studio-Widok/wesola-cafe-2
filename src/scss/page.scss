@@ -124,12 +124,30 @@
   }
 }
 
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0;
+  }
+}
+
 footer {
   background-color: #000;
   color: #fff;
 
   #footer-img {
     width: 75%;
+    animation: flicker 5s infinite alternate;
   }
 
   .copyright {

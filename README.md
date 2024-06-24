@@ -7,7 +7,7 @@
 - [x] thinner accent font
 - [x] galleries are missing counts
 - [x] more space between "widzimy się" and the text below
-- [ ] neon blinking on "lepiej pić kawę niż nie"
+- [x] neon flicker on "lepiej pić kawę niż nie"
 - [x] thicker and shorter (text width) underline below nav links
 - [x] slightly smaller fonts
 - [x] catering - top image smaller, to show the heading below

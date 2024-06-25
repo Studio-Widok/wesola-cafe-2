@@ -88,23 +88,24 @@
     }
 
     .menu-text {
-      @include fontAccent();
-      font-size: 2rem;
+      font-size: 1.75rem;
       position: absolute;
       inset: 0;
       padding: 3rem;
-      background-color: $colorContent;
-      color: $colorBg;
+      color: $colorContent;
+      background-color: $colorBg;
       box-shadow: 0 0 0 2px $colorContent inset;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       text-align: center;
       transition: 0.3s;
 
       &:hover {
-        color: $colorContent;
-        background-color: $colorBg;
+        background-color: $colorContent;
+        color: $colorBg;
       }
     }
   }
@@ -145,9 +146,25 @@ footer {
   background-color: #000;
   color: #fff;
 
-  #footer-img {
+  #footer-img-wrap {
     width: 75%;
-    animation: flicker 5s infinite alternate;
+    position: relative;
+    padding-bottom: 50%;
+
+    #footer-img-1 {
+      position: absolute;
+      top: 45%;
+      left: 0;
+      width: 51%;
+      animation: flicker 5s infinite alternate;
+    }
+
+    #footer-img-2 {
+      position: absolute;
+      top: 0;
+      left: 45%;
+      width: 55%;
+    }
   }
 
   .copyright {

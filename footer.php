@@ -8,8 +8,12 @@ get_part('instagram');
   <div class="content-wrap">
     <div class="content column">
       <div class="rsep"></div>
-      <img src="<?= get_template_directory_uri() ?>/media/img-footer.svg" alt=""
-        id="footer-img">
+      <div id="footer-img-wrap">
+        <img src="<?= get_template_directory_uri() ?>/media/img-footer-1.svg"
+          alt="lepiej pić kawę niż nie" id="footer-img-1">
+        <img src="<?= get_template_directory_uri() ?>/media/img-footer-2.svg"
+          alt="" id="footer-img-2">
+      </div>
       <div class="copyright">
         <div><?= get_field('copyright', get_option('page_on_front')) ?></div>
         <div>

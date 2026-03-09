@@ -48,7 +48,7 @@ get_part('top');
       <?php
       for ($i = 0; $i < count($eating['sections']); $i++) {
         $section = $eating['sections'][$i];
-        ?>
+      ?>
         <div class="eating-section">
           <div class="image-wrap">
             <?= widok_img($section['image'], ['srcset' => true]) ?>
@@ -64,10 +64,10 @@ get_part('top');
 
       <div class="eating-text">
         <div class="text"><?= $eating['text'] ?></div>
-        <?php if (!empty($eating['menu_download'])) { ?>
+        <?php if (!empty($eating['menu_download'])) {        ?>
           <div class="rmin"></div>
           <div class="text large uppercase">
-            <a href="/menu<?= pll_current_language() === 'pl' ? '' : '-en' ?>"" target="
+            <a href="/menu" target="
               _blank" rel="noopener noreferrer">
               <u><?= $eating['menu_button'] ?></u>
             </a>

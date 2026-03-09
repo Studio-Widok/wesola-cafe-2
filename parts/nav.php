@@ -9,7 +9,7 @@ $contact = get_field('contact', get_option('page_on_front'));
       <?php if (!is_front_page()) { ?>
         <a href="<?= get_home_url() ?>">
         <?php } ?>
-        <img src="<?= get_template_directory_uri() ?>/media/logo.svg"
+        <img src="<?= get_template_directory_uri() ?>/media/logo-2.svg"
           alt="Wesoła Cafe">
         <?php if (!is_front_page()) { ?>
         </a>
@@ -21,20 +21,20 @@ $contact = get_field('contact', get_option('page_on_front'));
             class="nav-link__icon"
             src="<?= get_template_directory_uri() ?>/media/icon-arrow.svg"
             alt="download"></a>
-        <?php
+      <?php
       }
 
       $bakeryLink = get_field('bakery_link', get_option('page_on_front'));
       if (empty($bakeryLink)) {
-        ?>
+      ?>
         <div class="nav-link nav-link--disabled">
           <span><?= pll__('nasza piekarnia') ?></span><img class="nav-link__icon"
             src="<?= get_template_directory_uri() ?>/media/icon-girl.svg" alt="">
           <div class="tooltip"><span>coming soon</span></div>
         </div>
-        <?php
+      <?php
       } else {
-        ?>
+      ?>
         <a href="<?= $bakeryLink ?>" target="_blank" rel="noopener noreferrer"
           class="nav-link"><?= pll__('nasza piekarnia') ?><img
             class="nav-link__icon"
@@ -49,7 +49,7 @@ $contact = get_field('contact', get_option('page_on_front'));
       <?php
       $langs = pll_the_languages(['hide_current' => true, 'raw' => true]);
       foreach ($langs as $slug => $lang) {
-        ?>
+      ?>
         <a href="<?= $lang['url'] ?>" class="nav-link"><?= $slug ?></a>
       <?php } ?>
 

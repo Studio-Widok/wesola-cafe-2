@@ -20,14 +20,14 @@ $menu_date_en = $menu_en->format('Ymd');
     <div class="accent"><?= get_the_title() ?></div>
     <div class="r"></div>
     <div class="flex" id="menu-flex">
-      <a href="<?= home_url('menu-pl') . '?t=' . $menu_date_pl ?>"
+      <a href="<?= home_url('menu-pl') . '?t=_' . $menu_date_pl ?>"
         target="_blank" rel="noopener noreferrer" class="menu-download">
         <div class="menu-spacer"></div>
         <div class="menu-text">
           <?= get_field('polish', pll_get_post(get_the_ID(), 'pl')) ?>
         </div>
       </a>
-      <a href="<?= home_url('menu-en') . '?t=' . $menu_date_en ?>"
+      <a href="<?= home_url('menu-en') . '?t=_' . $menu_date_en ?>"
         target="_blank" rel="noopener noreferrer" class="menu-download">
         <div class="menu-spacer"></div>
         <div class="menu-text">

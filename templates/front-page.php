@@ -64,10 +64,14 @@ get_part('top');
 
       <div class="eating-text">
         <div class="text"><?= $eating['text'] ?></div>
-        <?php if (!empty($eating['menu_download'])) {        ?>
+        <?php
+        if (!empty($eating['menu_download'])) {
+          $menu_date      = new DateTimeImmutable($eating['menu_download']['modified']);
+          $menu_date_string = $menu_date->format('Ymd');
+        ?>
           <div class="rmin"></div>
           <div class="text large uppercase">
-            <a href="/menu" target="
+            <a href="/menu<?= pll_current_language() === 'pl' ? '' : '-en' ?>?t=_<?= $menu_date_string ?>" target="
               _blank" rel="noopener noreferrer">
               <u><?= $eating['menu_button'] ?></u>
             </a>

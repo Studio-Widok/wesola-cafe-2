@@ -1,9 +1,10 @@
 <?php
 add_action('init', function () {
+  $version = "1.1";
   $url = get_template_directory_uri() . '/dist/';
-  wp_register_style('widok-main', $url . 'main.css', [], 1.0);
+  wp_register_style('widok-main', $url . 'main.css', [], $version);
   // wp_register_style('widok-templates', $url . 'templates.css', [], 1.0);
-  wp_register_script('widok-main', $url . 'main.js', [], 1.0, true);
+  wp_register_script('widok-main', $url . 'main.js', [], $version, true);
 });
 
 // add_action('admin_init', function () {

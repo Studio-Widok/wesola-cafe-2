@@ -77,35 +77,41 @@
 
 #menu-flex {
   gap: 3em;
-  align-items: center;
+  flex-direction: column;
 
   .menu-download {
-    position: relative;
     width: 50%;
 
-    .menu-spacer {
-      padding-bottom: 100%;
-    }
-
     .menu-text {
-      font-size: 1.75rem;
-      position: absolute;
-      inset: 0;
-      padding: 3rem;
+      font-size: max(min(1.75rem, 1.75vw * $fontRatio), 1.2rem);
+      padding: 0.9rem 2rem;
       color: $colorContent;
       background-color: $colorBg;
       box-shadow: 0 0 0 2px $colorContent inset;
+      line-height: 1.2;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-align: center;
+      justify-content: space-between;
       transition: 0.3s;
+
+      span {
+        letter-spacing: 0.1em;
+      }
+
+      .menu-download-icon {
+        width: 2rem;
+        height: auto;
+        filter: invert(1);
+        transition: 0.3s;
+      }
 
       &:hover {
         background-color: $colorContent;
         color: $colorBg;
+
+        .menu-download-icon {
+          filter: invert(0);
+        }
       }
     }
   }
@@ -122,6 +128,43 @@
 
   @media (max-width: $resPhone) {
     gap: 1rem;
+  }
+}
+
+.page-template-menu {
+  .content-wrap {
+    overflow: hidden;
+
+    .accent {
+      font-size: max(min(5rem, 7vw * $fontRatio), 3.5rem);
+    }
+  }
+
+  .eating-img-2 {
+    width: calc(50% - 2rem);
+    margin-left: auto;
+    margin-bottom: -8%;
+
+    img {
+      width: 180%;
+      max-width: none;
+      margin-right: -80%;
+      transform: scaleX(-1);
+    }
+
+    @media (max-width: $resPhone) {
+      margin-bottom: 2rem;
+      width: calc(90% - 2rem);
+
+      img {
+        width: 120%;
+        margin-right: -20%;
+      }
+    }
+  }
+
+  .menu-description {
+    max-width: 32rem;
   }
 }
 

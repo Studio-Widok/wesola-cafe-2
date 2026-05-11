@@ -51,7 +51,7 @@ add_action('manage_product_posts_custom_column', function ($column, $post_id) {
   if ($column !== 'enabled') return;
   $on = (bool) get_field('enabled', $post_id);
   echo '<button class="product-toggle' . ($on ? ' product-toggle--on' : '') . '" data-post-id="' . esc_attr($post_id) . '">'
-    . ($on ? '✓' : '–') . '</button>';
+    . ($on ? '✓' : '') . '</button>';
 }, 10, 2);
 
 // ── Category filter ───────────────────────────────────────────────────────────
@@ -102,42 +102,70 @@ add_action('wp_ajax_toggle_product_enabled', function () {
 add_action('admin_head', function () {
   if (($GLOBALS['pagenow'] ?? '') !== 'edit.php') return;
   if (($GLOBALS['typenow'] ?? '') !== 'product') return;
-  ?>
+?>
   <style>
-    .column-enabled { width: 4.5rem; text-align: center; }
-    .product-toggle {
-      width: 2rem; height: 2rem; border-radius: 50%; border: none;
-      background: #ddd; color: #666; font-size: 1rem;
-      cursor: pointer; transition: background .15s, color .15s;
+    .column-enabled {
+      width: 3.5rem;
+      vertical-align: middle !important;
     }
-    .product-toggle--on { background: #1a7a1a; color: #fff; }
-    .product-toggle:disabled { opacity: .5; cursor: default; }
+
+    .product-toggle {
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      border: 2px solid #aaa;
+      background: #fff;
+      color: #666;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      line-height: 0;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+
+    .product-toggle:hover {
+      background-color: #ddd;
+    }
+
+    .product-toggle--on {
+      border-color: #1a7a1a;
+      color: #1a7a1a;
+    }
+
+    .product-toggle:disabled {
+      opacity: .5;
+      cursor: default;
+    }
   </style>
-  <?php
+<?php
 });
 
 add_action('admin_footer', function () {
   if (($GLOBALS['pagenow'] ?? '') !== 'edit.php') return;
   if (($GLOBALS['typenow'] ?? '') !== 'product') return;
   $nonce = wp_create_nonce('toggle_product_enabled');
-  ?>
+?>
   <script>
-    jQuery(function ($) {
-      $(document).on('click', '.product-toggle', function () {
+    jQuery(function($) {
+      $(document).on('click', '.product-toggle', function() {
         var $btn = $(this).prop('disabled', true);
         $.post(ajaxurl, {
-          action:  'toggle_product_enabled',
-          nonce:   <?= json_encode($nonce) ?>,
+          action: 'toggle_product_enabled',
+          nonce: <?= json_encode($nonce) ?>,
           post_id: $btn.data('post-id'),
-        }, function (res) {
+        }, function(res) {
           if (res.success) {
             var on = res.data.enabled;
-            $btn.text(on ? '✓' : '–').toggleClass('product-toggle--on', on);
+            $btn.text(on ? '✓' : '').toggleClass('product-toggle--on', on);
           }
           $btn.prop('disabled', false);
         });
       });
     });
   </script>
-  <?php
+<?php
 });

@@ -4,6 +4,32 @@ $logo  = get_field('logo');
 $intro = get_field('intro');
 $info  = get_field('info');
 
+$enabled_terms = array_filter(
+  get_terms(['taxonomy' => 'product_category', 'hide_empty' => false]) ?: [],
+  fn($term) => get_field('enabled', $term)
+);
+
+$all_products = get_posts([
+  'post_type'      => 'product',
+  'posts_per_page' => -1,
+  'post_status'    => 'publish',
+  'meta_key'       => 'enabled',
+  'meta_value'     => '1',
+  'orderby'        => 'menu_order title',
+  'order'          => 'ASC',
+]);
+
+$categories = [];
+foreach ($enabled_terms as $term) {
+  $products = array_values(array_filter($all_products, function ($p) use ($term) {
+    $terms = get_the_terms($p->ID, 'product_category');
+    return !empty($terms) && !is_wp_error($terms) && $terms[0]->term_id === $term->term_id;
+  }));
+  if (!empty($products)) {
+    $categories[] = ['term' => $term, 'products' => $products];
+  }
+}
+
 get_header();
 get_part('nav');
 get_part('top');
@@ -38,9 +64,40 @@ get_part('top');
       </div>
     </div>
 
-    <div class="r"></div>
+    <div class="rsep"></div>
 
-    <!-- TODO: products list with categories -->
+    <div class="text uppercase"><?= get_field('our_products') ?></div>
+
+    <?php if (!empty($categories)) { ?>
+      <div class="r"></div>
+
+      <div class="deli-categories">
+        <?php foreach ($categories as $cat) { ?>
+          <a href="#category-<?= esc_attr($cat['term']->slug) ?>" class="deli-category-btn">
+            <?= esc_html($cat['term']->name) ?>
+          </a>
+        <?php } ?>
+      </div>
+
+      <div class="deli-products">
+        <?php foreach ($categories as $cat) {
+          $products = $cat['products'];
+        ?>
+          <div class="deli-category-section" id="category-<?= esc_attr($cat['term']->slug) ?>">
+            <div class="r"></div>
+            <div class="accent"><?= esc_html($cat['term']->name) ?></div>
+            <div class="r"></div>
+            <?php for ($i = 0; $i < count($products); $i++) {
+              $product = $products[$i];
+            ?>
+              <div class="product"><?= get_the_title($product) ?></div>
+            <?php } ?>
+          </div>
+        <?php } ?>
+      </div>
+    <?php } ?>
+
+    <div class="rsep"></div>
 
   </div>
 

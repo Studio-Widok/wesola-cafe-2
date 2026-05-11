@@ -20,6 +20,34 @@
     }
   }
 
+  .deli-categories {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    background-color: #fffaec;
+  }
+
+  .deli-category-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.85rem;
+    border: 1px solid #8c1400;
+    border-radius: 100px;
+    color: #8c1400;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+      background: #8c1400;
+      color: #fffaec;
+    }
+  }
+
   .deli-info {
     position: relative;
     margin-top: 6rem;

@@ -1,13 +1,13 @@
 import 'lazysizes';
 import $ from 'cash-dom';
-// import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import 'widok';
 import createSlider from "widok-slider";
 
 import './nav';
 
-// smoothscroll.polyfill();
+smoothscroll.polyfill();
 
 $('.image-group-wrap').each((index, DOMElement) => {
   const wrap = $(DOMElement);
@@ -30,6 +30,15 @@ $('.image-group-wrap').each((index, DOMElement) => {
       slideNumberElement.text(slide.realId + 1);
     },
   });
+});
+
+$('.deli-category-btn').on('click', function (e) {
+  e.preventDefault();
+  const target = document.querySelector($(this).attr('href'));
+  if (!target) return;
+  const navHeight = document.querySelector('.deli-categories')?.offsetHeight ?? 0;
+  const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+  window.scrollTo({ top, behavior: 'smooth' });
 });
 
 document.querySelectorAll('.sbi_photo').forEach(DOMElement => {

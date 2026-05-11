@@ -88,9 +88,41 @@ get_part('top');
             <div class="accent"><?= esc_html($cat['term']->name) ?></div>
             <div class="r"></div>
             <?php for ($i = 0; $i < count($products); $i++) {
-              $product = $products[$i];
+              $product     = $products[$i];
+              $p_image     = get_field('image', $product->ID);
+              $p_decorator = get_field('decorator', $product->ID);
+              $p_price     = get_field('price', $product->ID);
+              $p_desc      = get_field('description', $product->ID);
+              $p_info      = get_field('info', $product->ID);
             ?>
-              <div class="product"><?= get_the_title($product) ?></div>
+              <div class="product">
+                <div class="product__image">
+                  <?php if (!empty($p_image)) { ?>
+                    <?= widok_img($p_image, ['srcset' => true]) ?>
+                  <?php } ?>
+                  <?php if (!empty($p_decorator)) { ?>
+                    <div class="product__decorator">
+                      <?= widok_img($p_decorator) ?>
+                    </div>
+                  <?php } ?>
+                </div>
+                <div class="product__content">
+                  <div class="product__header">
+                    <div class="large uppercase"><?= esc_html(get_the_title($product)) ?></div>
+                    <?php if (!empty($p_price)) { ?>
+                      <div class="large uppercase"><?= esc_html($p_price) ?></div>
+                    <?php } ?>
+                  </div>
+                  <?php if (!empty($p_desc)) { ?>
+                    <div class="text product__description"><?= $p_desc ?></div>
+                  <?php } ?>
+                  <?php if (!empty($p_info)) { ?>
+                    <div class="product__info">
+                      <?= $p_info ?>
+                    </div>
+                  <?php } ?>
+                </div>
+              </div>
             <?php } ?>
           </div>
         <?php } ?>

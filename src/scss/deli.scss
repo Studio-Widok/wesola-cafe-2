@@ -40,11 +40,116 @@
     color: #8c1400;
     text-transform: uppercase;
     font-size: 0.8rem;
-    transition: background 0.15s, color 0.15s;
+    transition:
+      background 0.15s,
+      color 0.15s;
 
     &:hover {
       background: #8c1400;
       color: #fffaec;
+    }
+  }
+
+  .product {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid currentColor;
+
+    &:last-child {
+      border-bottom: 1px solid currentColor;
+    }
+
+    .product__image {
+      width: 33.3333%;
+      flex-shrink: 0;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .product__decorator {
+        position: absolute;
+        top: 0.75rem;
+        right: -0.75rem;
+        width: 4rem;
+        pointer-events: none;
+      }
+    }
+
+    .product__content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .product__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      font-family: monospace;
+    }
+
+    .product__description {
+      margin-top: 0.75rem;
+    }
+
+    .product__info {
+      display: block;
+      margin-top: 0.75rem;
+      font-family: monospace;
+      font-size: 1rem;
+
+      tbody {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 3px;
+
+        @media (max-width: $resPhone) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      tr {
+        display: contents;
+      }
+
+      td {
+        width: auto !important;
+
+        &:first-child {
+          grid-column-start: 1;
+        }
+
+        &[colspan="2"] {
+          grid-column-end: span 2;
+        }
+
+        &[colspan="3"] {
+          grid-column-end: span 3;
+        }
+
+        &[colspan="4"] {
+          grid-column-end: span 4;
+        }
+
+        @media (max-width: $resPhone) {
+          &[colspan="3"] {
+            grid-column-end: span 2;
+          }
+
+          &[colspan="4"] {
+            grid-column-end: span 2;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $resTablet) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 

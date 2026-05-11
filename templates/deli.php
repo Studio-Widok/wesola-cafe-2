@@ -62,15 +62,13 @@ get_part('top');
       <div class="text uppercase large" id="intro">
         <?= $intro ?>
       </div>
+
+      <div class="rsep"></div>
+
+      <div class="text uppercase"><?= get_field('our_products') ?></div>
     </div>
 
-    <div class="rsep"></div>
-
-    <div class="text uppercase"><?= get_field('our_products') ?></div>
-
     <?php if (!empty($categories)) { ?>
-      <div class="r"></div>
-
       <div class="deli-categories">
         <?php foreach ($categories as $cat) { ?>
           <a href="#category-<?= esc_attr($cat['term']->slug) ?>" class="deli-category-btn">
@@ -85,7 +83,7 @@ get_part('top');
         ?>
           <div class="deli-category-section" id="category-<?= esc_attr($cat['term']->slug) ?>">
             <div class="r"></div>
-            <div class="accent"><?= esc_html($cat['term']->name) ?></div>
+            <div class="accent deli-category-header"><?= esc_html($cat['term']->name) ?></div>
             <div class="r"></div>
             <?php for ($i = 0; $i < count($products); $i++) {
               $product     = $products[$i];

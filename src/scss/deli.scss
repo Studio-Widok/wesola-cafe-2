@@ -29,6 +29,10 @@
     gap: 0.5rem;
     padding: 1rem 0;
     background-color: #fffaec;
+
+    @media (max-width: $resTablet) {
+      padding-left: 3.5rem;
+    }
   }
 
   .deli-category-btn {

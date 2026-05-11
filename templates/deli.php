@@ -1,5 +1,10 @@
 <?php // template name: deli
 
+function getDeliCatName($cat) {
+  if (pll_current_language() === 'pl') return esc_html($cat['term']->name);
+  return get_field('english_title', $cat['term']);
+}
+
 $logo  = get_field('logo');
 $intro = get_field('intro');
 $info  = get_field('info');
@@ -72,7 +77,7 @@ get_part('top');
       <div class="deli-categories">
         <?php foreach ($categories as $cat) { ?>
           <a href="#category-<?= esc_attr($cat['term']->slug) ?>" class="deli-category-btn">
-            <?= esc_html($cat['term']->name) ?>
+            <?= getDeliCatName($cat); ?>
           </a>
         <?php } ?>
       </div>
@@ -83,15 +88,27 @@ get_part('top');
         ?>
           <div class="deli-category-section" id="category-<?= esc_attr($cat['term']->slug) ?>">
             <div class="r"></div>
-            <div class="accent deli-category-header"><?= esc_html($cat['term']->name) ?></div>
+            <div class="accent deli-category-header"><?= getDeliCatName($cat) ?></div>
             <div class="r"></div>
             <?php for ($i = 0; $i < count($products); $i++) {
-              $product     = $products[$i];
-              $p_image     = get_field('image', $product->ID);
+              $product = $products[$i];
+              $p_image = get_field('image', $product->ID);
               $p_decorator = get_field('decorator', $product->ID);
-              $p_price     = get_field('price', $product->ID);
-              $p_desc      = get_field('description', $product->ID);
-              $p_info      = get_field('info', $product->ID);
+              $p_price = get_field('price', $product->ID);
+
+              $useEng = pll_current_language() !== 'pl';
+              $p_title = get_the_title($product);
+              $p_desc = get_field('description', $product->ID);
+              $p_info = get_field('info', $product->ID);
+              if ($useEng) {
+                $p_title_en = get_field('name_en', $product->ID);
+                $p_desc_en = get_field('description_en', $product->ID);
+                $p_info_en = get_field('info_en', $product->ID);
+
+                $p_title = empty($p_title_en) ? $p_title : $p_title_en;
+                $p_desc = empty($p_desc_en) ? $p_desc : $p_desc_en;
+                $p_info = empty($p_info_en) ? $p_info : $p_info_en;
+              }
             ?>
               <div class="product">
                 <div class="product__image">
@@ -106,7 +123,7 @@ get_part('top');
                 </div>
                 <div class="product__content">
                   <div class="product__header">
-                    <div class="large uppercase"><?= esc_html(get_the_title($product)) ?></div>
+                    <div class="large uppercase"><?= esc_html($p_title) ?></div>
                     <?php if (!empty($p_price)) { ?>
                       <div class="large uppercase"><?= esc_html($p_price) ?></div>
                     <?php } ?>

@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . '/include/cleanup.php';
+include __DIR__ . '/include/products.php';
 include __DIR__ . '/include/enqueue.php';
 include __DIR__ . '/include/partials.php';
 include __DIR__ . '/include/helpers.php';

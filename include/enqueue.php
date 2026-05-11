@@ -1,6 +1,6 @@
 <?php
 add_action('init', function () {
-  $version = "1.1";
+  $version = rand();
   $url = get_template_directory_uri() . '/dist/';
   wp_register_style('widok-main', $url . 'main.css', [], $version);
   // wp_register_style('widok-templates', $url . 'templates.css', [], 1.0);

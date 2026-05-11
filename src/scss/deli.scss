@@ -1,0 +1,53 @@
+@use "variables" as *;
+
+.page-template-deli {
+  .content-wrap {
+    background-color: #fffaec;
+  }
+
+  .color-red {
+    color: #8c1400;
+  }
+
+  .deli-lang-switch {
+    text-decoration: underline;
+  }
+
+  .deli-logo {
+    img {
+      width: 100%;
+      max-width: 40rem;
+    }
+  }
+
+  .deli-info {
+    position: relative;
+    margin-top: 6rem;
+
+    > img {
+      width: 100%;
+      height: auto;
+    }
+
+    .deli-info__text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      padding: 5vw;
+      color: #fffaec;
+      text-align: right;
+    }
+
+    @media (max-width: $resPhone) {
+      margin-top: 3rem;
+
+      .deli-info__text {
+        position: static;
+        background-color: #8c1400;
+        width: 100%;
+        padding: 1.5rem 2rem;
+      }
+    }
+  }
+}

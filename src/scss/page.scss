@@ -185,9 +185,11 @@
   }
 }
 
-footer {
-  background-color: #000;
-  color: #fff;
+body footer.footer {
+  .content-wrap {
+    background-color: #000;
+    color: #fff;
+  }
 
   #footer-img-wrap {
     width: 75%;

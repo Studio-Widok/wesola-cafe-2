@@ -1,10 +1,11 @@
 <?php
 $privacyPolicyId = get_option('wp_page_for_privacy_policy');
 
-get_part('instagram');
+if (!is_page_template('templates/deli.php'))
+  get_part('instagram');
 ?>
 
-<footer>
+<footer class="footer">
   <div class="content-wrap">
     <div class="content column">
       <div class="rsep"></div>

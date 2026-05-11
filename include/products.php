@@ -54,6 +54,19 @@ add_action('manage_product_posts_custom_column', function ($column, $post_id) {
     . ($on ? '✓' : '') . '</button>';
 }, 10, 2);
 
+// ── Category enabled column ───────────────────────────────────────────────────
+
+add_filter('manage_edit-product_category_columns', function ($columns) {
+  return array_merge(['enabled' => 'Aktywny'], $columns);
+});
+
+add_filter('manage_product_category_custom_column', function ($content, $column, $term_id) {
+  if ($column !== 'enabled') return $content;
+  $on = (bool) get_field('enabled', 'term_' . $term_id);
+  return '<button class="product-toggle' . ($on ? ' product-toggle--on' : '') . '" data-term-id="' . esc_attr($term_id) . '">'
+    . ($on ? '✓' : '') . '</button>';
+}, 10, 3);
+
 // ── Category filter ───────────────────────────────────────────────────────────
 
 add_action('restrict_manage_posts', function ($post_type) {
@@ -97,11 +110,28 @@ add_action('wp_ajax_toggle_product_enabled', function () {
   wp_send_json_success(['enabled' => $new]);
 });
 
+// ── AJAX toggle category ─────────────────────────────────────────────────────
+
+add_action('wp_ajax_toggle_category_enabled', function () {
+  check_ajax_referer('toggle_category_enabled', 'nonce');
+
+  $term_id = intval($_POST['term_id'] ?? 0);
+  if (!$term_id || !current_user_can('manage_categories')) {
+    wp_send_json_error();
+  }
+
+  $new = !(bool) get_field('enabled', 'term_' . $term_id);
+  update_field('enabled', $new, 'term_' . $term_id);
+  wp_send_json_success(['enabled' => $new]);
+});
+
 // ── Admin assets ──────────────────────────────────────────────────────────────
 
 add_action('admin_head', function () {
-  if (($GLOBALS['pagenow'] ?? '') !== 'edit.php') return;
-  if (($GLOBALS['typenow'] ?? '') !== 'product') return;
+  $pagenow          = $GLOBALS['pagenow'] ?? '';
+  $is_product_list  = $pagenow === 'edit.php' && ($GLOBALS['typenow'] ?? '') === 'product';
+  $is_category_list = $pagenow === 'edit-tags.php' && ($_GET['taxonomy'] ?? '') === 'product_category';
+  if (!$is_product_list && !$is_category_list) return;
 ?>
   <style>
     .column-enabled {
@@ -145,19 +175,24 @@ add_action('admin_head', function () {
 });
 
 add_action('admin_footer', function () {
-  if (($GLOBALS['pagenow'] ?? '') !== 'edit.php') return;
-  if (($GLOBALS['typenow'] ?? '') !== 'product') return;
-  $nonce = wp_create_nonce('toggle_product_enabled');
+  $pagenow          = $GLOBALS['pagenow'] ?? '';
+  $is_product_list  = $pagenow === 'edit.php' && ($GLOBALS['typenow'] ?? '') === 'product';
+  $is_category_list = $pagenow === 'edit-tags.php' && ($_GET['taxonomy'] ?? '') === 'product_category';
+  if (!$is_product_list && !$is_category_list) return;
+
+  $product_nonce  = wp_create_nonce('toggle_product_enabled');
+  $category_nonce = wp_create_nonce('toggle_category_enabled');
 ?>
   <script>
     jQuery(function($) {
       $(document).on('click', '.product-toggle', function() {
-        var $btn = $(this).prop('disabled', true);
-        $.post(ajaxurl, {
-          action: 'toggle_product_enabled',
-          nonce: <?= json_encode($nonce) ?>,
-          post_id: $btn.data('post-id'),
-        }, function(res) {
+        var $btn    = $(this).prop('disabled', true);
+        var post_id = $btn.data('post-id');
+        var term_id = $btn.data('term-id');
+        var data    = post_id
+          ? { action: 'toggle_product_enabled',  nonce: <?= json_encode($product_nonce) ?>,  post_id: post_id }
+          : { action: 'toggle_category_enabled', nonce: <?= json_encode($category_nonce) ?>, term_id: term_id };
+        $.post(ajaxurl, data, function(res) {
           if (res.success) {
             var on = res.data.enabled;
             $btn.text(on ? '✓' : '').toggleClass('product-toggle--on', on);

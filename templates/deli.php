@@ -74,12 +74,14 @@ get_part('top');
     </div>
 
     <?php if (!empty($categories)) { ?>
-      <div class="deli-categories">
-        <?php foreach ($categories as $cat) { ?>
-          <a href="#category-<?= esc_attr($cat['term']->slug) ?>" class="deli-category-btn">
-            <?= getDeliCatName($cat); ?>
-          </a>
-        <?php } ?>
+      <div class="deli-categories-wrap">
+        <div class="deli-categories">
+          <?php foreach ($categories as $cat) { ?>
+            <a href="#category-<?= esc_attr($cat['term']->slug) ?>" class="deli-category-btn">
+              <?= getDeliCatName($cat); ?>
+            </a>
+          <?php } ?>
+        </div>
       </div>
 
       <div class="deli-products">
@@ -111,16 +113,16 @@ get_part('top');
               }
             ?>
               <div class="product">
-                <div class="product__image">
-                  <?php if (!empty($p_image)) { ?>
+                <?php if (!empty($p_image)) { ?>
+                  <div class="product__image">
                     <?= widok_img($p_image, ['srcset' => true]) ?>
-                  <?php } ?>
-                  <?php if (!empty($p_decorator)) { ?>
-                    <div class="product__decorator">
-                      <?= widok_img($p_decorator) ?>
-                    </div>
-                  <?php } ?>
-                </div>
+                    <?php if (!empty($p_decorator)) { ?>
+                      <div class="product__decorator">
+                        <?= widok_img($p_decorator) ?>
+                      </div>
+                    <?php } ?>
+                  </div>
+                <?php } ?>
                 <div class="product__content">
                   <div class="product__header">
                     <div class="large uppercase"><?= esc_html($p_title) ?></div>

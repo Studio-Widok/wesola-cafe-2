@@ -32,11 +32,59 @@ $('.image-group-wrap').each((index, DOMElement) => {
   });
 });
 
+const deliCategories = document.querySelector('.deli-categories');
+if (deliCategories) {
+  let dragging = false;
+  let moved = false;
+  let startX = 0;
+  let startScroll = 0;
+
+  deliCategories.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse') return;
+    dragging = true;
+    moved = false;
+    startX = e.clientX;
+    startScroll = deliCategories.scrollLeft;
+  });
+
+  // starting a drag on a chip would otherwise begin a native link drag
+  deliCategories.addEventListener('dragstart', e => e.preventDefault());
+
+  window.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 5) moved = true;
+    if (!moved) return;
+    deliCategories.classList.add('is-dragging');
+    deliCategories.scrollLeft = startScroll - dx;
+    e.preventDefault();
+  });
+
+  const endDrag = () => {
+    dragging = false;
+    deliCategories.classList.remove('is-dragging');
+  };
+  window.addEventListener('pointerup', endDrag);
+  window.addEventListener('pointercancel', endDrag);
+
+  // swallow the click that ends a drag so it doesn't jump to a category
+  deliCategories.addEventListener(
+    'click',
+    e => {
+      if (!moved) return;
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    true
+  );
+}
+
 $('.deli-category-btn').on('click', function (e) {
   e.preventDefault();
   const target = document.querySelector($(this).attr('href'));
   if (!target) return;
-  const navHeight = document.querySelector('.deli-categories')?.offsetHeight ?? 0;
+  const navHeight =
+    document.querySelector('.deli-categories-wrap')?.offsetHeight ?? 0;
   const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
   window.scrollTo({ top, behavior: 'smooth' });
 });
